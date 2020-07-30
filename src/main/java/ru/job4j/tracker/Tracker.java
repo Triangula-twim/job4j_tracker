@@ -52,7 +52,8 @@ public class Tracker {
         if (indexCell == -1) {
             return false;
         }
-        items[indexCell].setName(item.getName());
+        item.setId(id);
+        items[indexCell] = item;
         return true;
     }
 }
