@@ -8,12 +8,11 @@ public class DeleteAction implements UserAction{
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        boolean rsl = tracker.delete(Integer.valueOf(input.askStr("Choose id what you want to delete: ")));
-        if (rsl) {
+        if (tracker.delete(Integer.valueOf(input.askStr("Choose id what you want to delete: ")))) {
             System.out.println("Item deleted");
         } else {
             System.out.println("Item by id not found");
         }
-        return rsl;
+        return true;
     }
 }

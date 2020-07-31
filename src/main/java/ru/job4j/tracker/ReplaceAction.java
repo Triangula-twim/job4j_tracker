@@ -11,12 +11,11 @@ public class ReplaceAction implements UserAction{
         int id = Integer.valueOf(input.askStr("Choose id what you want to edit:"));
         Item item = new Item();
         item.setName(input.askStr("Enter new name: "));
-        boolean rsl = tracker.replace(id, item);
-        if (rsl) {
+        if (tracker.replace(id, item)) {
             System.out.println("Item changed");
         } else {
             System.out.println("Item by id not found");
         }
-        return rsl;
+        return true;
     }
 }
