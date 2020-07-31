@@ -89,7 +89,14 @@ public class StartUITest {
                 new Exit()
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll()[0], is(item));
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. Show" + System.lineSeparator()
+                + "1. Exit" + System.lineSeparator()
+                + "=== Show Item ====" + System.lineSeparator()
+                + "Id: 1 name: Show item" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. Show" + System.lineSeparator()
+                + "1. Exit" + System.lineSeparator()));
     }
 
     @Test
@@ -105,7 +112,14 @@ public class StartUITest {
                 new Exit()
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll()[0].getName(), is(item.getName()));
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. Find dy name" + System.lineSeparator()
+                + "1. Exit" + System.lineSeparator()
+                + "=== Find Item dy name ====" + System.lineSeparator()
+                + "Id: 1" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. Find dy name" + System.lineSeparator()
+                + "1. Exit" + System.lineSeparator()));
     }
 
     @Test
@@ -121,6 +135,13 @@ public class StartUITest {
                 new Exit()
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll()[0].getName(), is(item.getName()));
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. Find dy id" + System.lineSeparator()
+                + "1. Exit" + System.lineSeparator()
+                + "=== Find Item dy id ====" + System.lineSeparator()
+                + "Name: Find item" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. Find dy id" + System.lineSeparator()
+                + "1. Exit" + System.lineSeparator()));
     }
 }
