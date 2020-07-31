@@ -7,7 +7,8 @@ public class Item {
     public Item() {
     }
 
-    public Item(String replaced_item) {
+    public Item(String name) {
+        this.name = name;
     }
 
     public int getId() {
