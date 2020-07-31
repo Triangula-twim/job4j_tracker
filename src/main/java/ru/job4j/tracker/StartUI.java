@@ -31,24 +31,38 @@ public class StartUI {
                 Item item = new Item();
                 System.out.println("Enter new name: ");
                 item.setName(scanner.nextLine());
-                tracker.replace(id, item);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Item changed");
+                } else {
+                    System.out.println("Item by id not found");
+                }
             }else if (select == 3) {
                 System.out.println("=== Delete Item ====");
                 System.out.println("Choose id what you want to delete: ");
-                tracker.delete(Integer.valueOf(scanner.nextLine()));
+                if (tracker.delete(Integer.valueOf(scanner.nextLine()))) {
+                    System.out.println("Item deleted");
+                } else {
+                    System.out.println("Item by id not found");
+                }
             }else if (select == 4) {
                 System.out.println("=== Find Item dy id ====");
                 System.out.println("Choose id: ");
                 Item findItem = tracker.findById(Integer.valueOf(scanner.nextLine()));
                 if (findItem != null) {
                     System.out.println("Name: " + findItem.getName());
+                } else {
+                    System.out.println("Item not found");
                 }
             }else if (select == 5) {
                 System.out.println("=== Find Item dy name ====");
                 System.out.println("Choose name: ");
                 Item[] findItemByName = tracker.findByName(scanner.nextLine());
-                for (int i = 0; i < findItemByName.length; i++) {
-                    System.out.println("Id: " + findItemByName[i].getId());
+                if (findItemByName.length > 0) {
+                    for (int i = 0; i < findItemByName.length; i++) {
+                        System.out.println("Id: " + findItemByName[i].getId());
+                    }
+                } else {
+                    System.out.println("no items find by name.");
                 }
             } else if (select == 6) {
                 run = false;
