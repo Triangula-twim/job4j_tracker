@@ -1,18 +1,20 @@
 package ru.job4j.tracker.trackers;
 
+import ru.job4j.tracker.Tracker;
+
 public class SFFSingle {
     //static final field. Eager loading
-    private static final SFFSingle INSTANCE = new SFFSingle();
+    private static final Tracker INSTANCE = new Tracker();
 
     private SFFSingle() {
     }
 
-    public static SFFSingle getInstance() {
+    public static Tracker getInstance() {
         return INSTANCE;
     }
 
     public static void main(String[] args) {
-        SFFSingle tracker = SFFSingle.getInstance();
+        Tracker tracker = SFFSingle.getInstance();
     }
 }
 
