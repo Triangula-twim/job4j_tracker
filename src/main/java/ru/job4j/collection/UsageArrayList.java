@@ -1,4 +1,4 @@
-package ru.job4j.tracker.ru.job4j.collection;
+package ru.job4j.collection;
 
 import java.util.ArrayList;
 

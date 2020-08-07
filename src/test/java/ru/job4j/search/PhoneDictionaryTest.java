@@ -1,6 +1,8 @@
-package ru.job4j.tracker.search;
+package ru.job4j.search;
 
 import org.junit.Test;
+import ru.job4j.search.Person;
+import ru.job4j.search.PhoneDictionary;
 
 import java.util.ArrayList;
 import static org.hamcrest.core.Is.is;
