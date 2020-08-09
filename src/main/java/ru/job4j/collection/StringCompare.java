@@ -14,11 +14,6 @@ public class StringCompare implements Comparator<String> {
                 return Character.compare(firstChar, secondChar);
             }
         }
-        if (firstLength < secondLength) {
-            return -1;
-        } else if (firstLength > secondLength) {
-            return 1;
-        }
-        return 0;
+        return Integer.compare(firstLength, secondLength);
     }
 }
