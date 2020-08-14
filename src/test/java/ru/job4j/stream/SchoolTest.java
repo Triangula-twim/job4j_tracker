@@ -53,4 +53,16 @@ public class SchoolTest {
                 "Lyapushkin", new Student("Lyapushkin", 65));
         Assert.assertEquals(School.listToMap(list), expected);
     }
+
+    @Test
+    public void checkMapIfSame() {
+        List<Student> list = List.of(new Student("Firsov", 56),
+                new Student("Frolov", 39),
+                new Student("Frolov", 71),
+                new Student("Lyapushkin", 65));
+        Map<String, Student> expected = Map.of("Firsov", new Student("Firsov", 56),
+                "Frolov", new Student("Frolov", 39),
+                "Lyapushkin", new Student("Lyapushkin", 65));
+        Assert.assertEquals(School.listToMap(list), expected);
+    }
 }
