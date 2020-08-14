@@ -7,9 +7,11 @@ import java.util.stream.Collectors;
 
 public class Profiles {
     public static List<Address> collect(List<Profile> profiles) {
-        List<Address> rsl = profiles.stream().map(profile ->
-                profile.getAddress()).collect(Collectors.toList());
-        rsl.sort(Comparator.naturalOrder());
-        return rsl.stream().distinct().collect(Collectors.toList());
+        return profiles.stream().map(Profile::getAddress).collect(Collectors.toList());
+    }
+
+    public static List<Address> collectUniq(List<Address> addresses) {
+        addresses.sort(Comparator.naturalOrder());
+        return addresses.stream().distinct().collect(Collectors.toList());
     }
 }

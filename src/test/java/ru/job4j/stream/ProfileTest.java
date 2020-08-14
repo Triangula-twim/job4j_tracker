@@ -20,6 +20,6 @@ public class ProfileTest {
                 new Profile(new Address("Samara", "Tovarnaya", 5, 63)));
         List<Address> expected = List.of(new Address("Kinel'", "Dvorovaya", 3, 12),
                 new Address("Samara", "Tovarnaya", 5, 63));
-        Assert.assertEquals(Profiles.collect(list), expected);
+        Assert.assertEquals(Profiles.collectUniq(Profiles.collect(list)), expected);
     }
 }
