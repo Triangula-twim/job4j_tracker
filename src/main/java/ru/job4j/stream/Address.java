@@ -2,12 +2,11 @@ package ru.job4j.stream;
 
 import java.util.Objects;
 
-public class Address {
+public class Address implements Comparable<Address> {
+
     private String city;
     private String street;
-
     private int home;
-
     private int apartment;
 
     public Address(String city, String street, int home, int apartment) {
@@ -35,5 +34,14 @@ public class Address {
     @Override
     public int hashCode() {
         return Objects.hash(city, street, home, apartment);
+    }
+
+    @Override
+    public int compareTo(Address o) {
+        return this.city.compareTo(o.getCity());
+    }
+
+    public String getCity() {
+        return city;
     }
 }
