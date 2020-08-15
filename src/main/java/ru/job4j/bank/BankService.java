@@ -25,9 +25,9 @@ public class BankService {
     }
 
     public User findByPassport(String passport) {
-        List<User> rsl = users.keySet().stream().filter(e -> e.getPassport().
-                equals(passport)).collect(Collectors.toList());
-        return rsl.isEmpty() ? null : rsl.get(0);
+        return users.keySet().stream()
+                .filter(e -> e.getPassport().equals(passport))
+                .findFirst().orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
@@ -35,10 +35,9 @@ public class BankService {
         if (key == null) {
             return null;
         }
-        List<Account> accounts = users.get(key).stream().filter(e ->
-                e.getRequisite().equals(requisite)).
-                collect(Collectors.toList());
-        return accounts.isEmpty() ? null : accounts.get(0);
+        return users.get(key).stream().filter(e ->
+                e.getRequisite().equals(requisite))
+                .findFirst().orElse(null);
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,
