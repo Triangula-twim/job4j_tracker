@@ -54,10 +54,7 @@ public class JobTest {
         jobs.add(second);
         jobs.add(third);
         Collections.sort(jobs, new JobAscByName());
-        List<Job> expected = new ArrayList<Job>();
-        expected.add(third);
-        expected.add(first);
-        expected.add(second);
+        List<Job> expected = List.of(third, first, second);
         assertEquals(jobs, expected);
     }
 
@@ -71,10 +68,7 @@ public class JobTest {
         jobs.add(second);
         jobs.add(third);
         Collections.sort(jobs, new JobDescByName());
-        List<Job> expected = new ArrayList<Job>();
-        expected.add(second);
-        expected.add(third);
-        expected.add(first);
+        List<Job> expected = List.of(second, third, first);
         assertEquals(jobs, expected);
     }
 
@@ -88,10 +82,7 @@ public class JobTest {
         jobs.add(second);
         jobs.add(third);
         Collections.sort(jobs, new JobAscByPriority());
-        List<Job> expected = new ArrayList<Job>();
-        expected.add(first);
-        expected.add(third);
-        expected.add(second);
+        List<Job> expected = List.of(first, third, second);
         assertEquals(jobs, expected);
     }
 
@@ -105,10 +96,7 @@ public class JobTest {
         jobs.add(second);
         jobs.add(third);
         Collections.sort(jobs, new JobDescByPriority());
-        List<Job> expected = new ArrayList<Job>();
-        expected.add(second);
-        expected.add(third);
-        expected.add(first);
+        List<Job> expected = List.of(second, third, first);
         assertEquals(jobs, expected);
     }
 }
